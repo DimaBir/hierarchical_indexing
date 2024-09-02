@@ -75,24 +75,22 @@ query = st.text_input(
 )
 
 if st.button("Get Answer") and query:
-    # Run the asynchronous code to initialize stores and retrieve the answer
-    loop = asyncio.new_event_loop()
-    asyncio.set_event_loop(loop)
-    loop.run_until_complete(app.initialize_stores())
+    with st.spinner("Retrieving the answer using hierarchical indexing..."):
+        loop = asyncio.new_event_loop()
+        asyncio.set_event_loop(loop)
+        loop.run_until_complete(app.initialize_stores())
 
-    # Retrieve the answer
-    results = app.get_answer(query)
+        results = app.get_answer(query)
 
-    # Store the response and query in the session state
-    st.session_state["user_prompt_history"].append(query)
-    st.session_state["chat_answers_history"].append(results)
-    st.session_state["chat_history"].append(("human", query))
-    st.session_state["chat_history"].append(("ai", results))
+        # Store the response and query in the session state
+        st.session_state["user_prompt_history"].append(query)
+        st.session_state["chat_answers_history"].append(results)
+        st.session_state["chat_history"].append(("human", query))
+        st.session_state["chat_history"].append(("ai", results))
 
-    # Display the results
-    display_response(results, query)
+        display_response(results, query)
 
-# Display chat history
+
 if st.session_state["chat_answers_history"]:
     for i, (user_query, generated_response) in enumerate(
         zip(
