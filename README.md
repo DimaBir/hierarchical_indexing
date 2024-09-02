@@ -1,1 +1,1 @@
-# nvidia_hierarchical_indexing
+# hierarchical_indexing project
