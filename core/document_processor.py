@@ -1,3 +1,4 @@
+import os
 import asyncio
 from tqdm.asyncio import tqdm_asyncio
 
@@ -5,6 +6,9 @@ from langchain_community.document_loaders import PyPDFLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from services.openai_service import OpenAIService
 from langchain.docstore.document import Document
+from dotenv import load_dotenv
+
+load_dotenv()
 
 
 class DocumentProcessor:
@@ -84,7 +88,7 @@ class DocumentProcessor:
         summaries = []
 
         # Process documents in smaller batches to avoid rate limits
-        batch_size = 2  # Adjust this based on your rate limits and document size
+        batch_size = int(os.getenv("DOC_BATCH_SIZE", 2))  # Adjust this based on your rate limits and document size
         total_batches = len(documents) // batch_size + (1 if len(documents) % batch_size != 0 else 0)
 
         for i in tqdm_asyncio(range(0, len(documents), batch_size), desc="Summarizing documents", total=total_batches):
