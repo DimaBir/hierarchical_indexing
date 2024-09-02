@@ -84,7 +84,7 @@ class DocumentProcessor:
         summaries = []
 
         # Process documents in smaller batches to avoid rate limits
-        batch_size = 5  # Adjust this based on your rate limits and document size
+        batch_size = 2  # Adjust this based on your rate limits and document size
         total_batches = len(documents) // batch_size + (1 if len(documents) % batch_size != 0 else 0)
 
         for i in tqdm_asyncio(range(0, len(documents), batch_size), desc="Summarizing documents", total=total_batches):
