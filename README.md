@@ -19,7 +19,7 @@ git clone https://github.com/DimaBir/hierarchical_indexing.git
 cd hierarchical_indexing
 ```
 
-2. Set up environment variables by creating a .env file in the root directory of the project and adding your environment variables:
+2. Set up environment variables by creating a `.env` file in the *root* directory of the project and adding your environment variables:
 ```bash
 OPENAI_API_KEY=your_openai_api_key_here
 ```
