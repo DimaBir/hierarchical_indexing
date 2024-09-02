@@ -4,7 +4,7 @@ This repository implements a hierarchical indexing system for document retrieval
 
 ## Introduction
 
-This project showcases how hierarchical indexing can be used to retrieve information quickly and accurately from large documents. Specifically, we use the entire `"Introduction to Algorithms"` book as our dataset. The hierarchical indexing method allows us to first identify relevant sections through high-level summaries and then drill down into detailed chunks, ensuring that retrieval is both fast and contextually relevant.
+This project showcases how hierarchical indexing can retrieve information quickly and accurately from large documents. Specifically, we use the entire `"Introduction to Algorithms, Third Edition" by Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest, and Clifford Stein.` book as our dataset. The book contains more than 1000+ pages. The hierarchical indexing method allows us to identify relevant sections through high-level summaries and then drill down into detailed chunks, ensuring that retrieval is fast and contextually relevant.
 
 
 ## Prerequisites
