@@ -2,6 +2,11 @@
 
 This repository implements a hierarchical indexing system for document retrieval, leveraging OpenAI's GPT models and FAISS for vector storage. The application is containerized using Docker, with a Streamlit interface for querying documents.
 
+## Introduction
+
+This project showcases how hierarchical indexing can be used to retrieve information quickly and accurately from large documents. Specifically, we use the entire `"Introduction to Algorithms"` book as our dataset. The hierarchical indexing method allows us to first identify relevant sections through high-level summaries and then drill down into detailed chunks, ensuring that retrieval is both fast and contextually relevant.
+
+
 ## Prerequisites
 
 Before you begin, ensure you have the following installed:
